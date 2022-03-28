@@ -1,0 +1,46 @@
+[build-system]
+requires = ["flit_core >=2,<3"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "api"
+author = "Galileo Technologies, Inc"
+author-email = "team@rungalileo.io"
+home-page = "https://www.github.com/rungalileo/api"
+description-file = "README.md"
+requires-python = ">=3.9.8"
+requires = [
+    "fastapi==0.66.0",
+    "gunicorn==20.1.0",
+    "uvicorn==0.16.0",
+    "uvloop==0.15.2",
+    "httptools==0.2.0",
+    "diskcache==5.2.1",
+    "vaex-core==4.8.0",
+    "vaex-hdf5==0.12.0",
+]
+
+[tool.flit.metadata.urls]
+Documentation = "https://www.github.com/rungalileo/api/docs"
+
+[tool.flit.metadata.requires-extra]
+test = [
+    "pytest==6.2.5",
+    "coverage==6.1.1",
+    "pytest-cov==3.0.0",
+    "seqeval==1.2.2"
+]
+dev = [
+    "mypy==0.910",
+    "types-requests==2.26.3",
+    "types-protobuf>=3.18.1,<4.0.0",
+    "flake8==3.9.2",
+    "black==21.10b0",
+    "isort==5.9.3",
+    "autoflake==1.4",
+    "scikit-learn==1.0.0",
+    "flake8-docstrings==1.6.0"
+]
+
+[tool.isort]
+profile = "black"
